@@ -5,9 +5,15 @@ class Menu:
     self.start_time = start_time
     self.end_time = end_time
     
-    def __repr__(self):
-    return self.name + ' menu available from ' + str(self.start_time) + ' - ' + str(self.end_time)
-    
+  def __repr__(self):
+   return self.name + ' menu available from ' + str(self.start_time) + ' - ' + str(self.end_time)
+  
+  def calculate_bill(self, purchased_items):
+    bill = 0
+    for purchase_item in purchased_items:
+      if purchased_item in self.items:
+        bill += self.items[purchased_item]
+    return bill
     
 # Brunch Menu
 brunch_items ={
@@ -30,3 +36,9 @@ dinner_items = {
 dinner_menu = Menu('Dinner', dinner_items, 1700, 2300)
 # print(dinner_menu.name)
 
+# Kids Menu
+kids_items = {
+  'chicken nuggets': 6.50, 'fusilli with wild mushrooms': 12.00, 'apple juice': 3.00
+}
+kids_menu = Menu('Kids', kids_items, 1100, 2100)
+print(kids_menu)
