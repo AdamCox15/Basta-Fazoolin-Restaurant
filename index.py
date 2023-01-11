@@ -4,6 +4,11 @@ class Menu:
     self.items = items
     self.start_time = start_time
     self.end_time = end_time
+    
+    def __repr__(self):
+    return self.name + ' menu available from ' + str(self.start_time) + ' - ' + str(self.end_time)
+    
+    
 # Brunch Menu
 brunch_items ={
   'pancakes': 7.50, 'waffles': 9.00, 'burger': 11.00, 'home fries': 4.50, 'coffee': 1.50, 'espresso': 3.00, 'tea': 1.00, 'mimosa': 10.50, 'orange juice': 3.50
@@ -24,3 +29,4 @@ dinner_items = {
 }
 dinner_menu = Menu('Dinner', dinner_items, 1700, 2300)
 # print(dinner_menu.name)
+
